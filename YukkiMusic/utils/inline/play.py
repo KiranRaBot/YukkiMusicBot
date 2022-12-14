@@ -52,7 +52,8 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
         ],
         [
             InlineKeyboardButton(
-                text=_["CLOSEMENU_BUTTON"], callback_data="close"
+                text=f"🗨️ JION CHAT GROUP 🗨️",
+                url=f"https://t.me/PunjabiChat_Group",
             )
         ],
     ]
