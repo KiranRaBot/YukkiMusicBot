@@ -12,19 +12,21 @@ import random
 from pyrogram.types import InlineKeyboardButton
 
 selections = [
-    "▁▄▂▇▄▅▄▅▃",
-    "▁▃▇▂▅▇▄▅▃",
-    "▃▁▇▂▅▃▄▃▅",
-    "▃▄▂▄▇▅▃▅▁",
-    "▁▃▄▂▇▃▄▅▃",
-    "▃▁▄▂▅▃▇▃▅",
-    "▁▇▄▂▅▄▅▃▄",
-    "▁▃▅▇▂▅▄▃▇",
-    "▃▅▂▅▇▁▄▃▁",
-    "▇▅▂▅▃▄▃▁▃",
-    "▃▇▂▅▁▅▄▃▁",
-    "▅▄▇▂▅▂▄▇▁",
-    "▃▅▂▅▃▇▄▅▃",
+    "▮▮▮▮▮▮▮▮",
+    "▮▮▮▮▮▮▮▯",
+    "▮▮▮▮▮▮▯▯",
+    "▮▮▮▮▮▯▯▯",
+    "▮▮▮▮▯▯▯▯",
+    "▮▮▮▯▯▯▯▯",
+    "▮▮▯▯▯▯▯▯",
+    "▮▯▯▯▯▯▯▯",
+    "▮▮▯▯▯▯▯▯",
+    "▮▮▮▯▯▯▯▯",
+    "▮▮▮▮▯▯▯▯",
+    "▮▮▮▮▮▯▯▯",
+    "▮▮▮▮▮▮▯▯",
+    "▮▮▮▮▮▮▮▯",
+    "▮▮▮▮▮▮▮▮",
 ]
 
 
@@ -34,6 +36,12 @@ selections = [
 def stream_markup_timer(_, videoid, chat_id, played, dur):
     bar = random.choice(selections)
     buttons = [
+        [
+            InlineKeyboardButton(
+                text=f"{played} {bar} {dur}",
+                callback_data="GetTimer",
+            )
+        ],
         [
             InlineKeyboardButton(
                 text="▷",
@@ -53,7 +61,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
                 callback_data=f"PanelMarkup {videoid}|{chat_id}",
             ),
             InlineKeyboardButton(
-                text=f"JION GROUP 🗨️",
+                text=f"Jion Group 🗨️",
                 url=f"https://t.me/PunjabiChat_Group",
             ),
         ],
@@ -64,6 +72,12 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
 def telegram_markup_timer(_, chat_id, played, dur):
     bar = random.choice(selections)
     buttons = [
+        [
+            InlineKeyboardButton(
+                text=f"{played} {bar} {dur}",
+                callback_data="GetTimer",
+            )
+        ],
         [
             InlineKeyboardButton(
                 text="▷",
@@ -79,7 +93,7 @@ def telegram_markup_timer(_, chat_id, played, dur):
                 callback_data=f"PanelMarkup None|{chat_id}",
             ),
             InlineKeyboardButton(
-                text=f"JION GROUP 🗨️",
+                text=f"Jion Group 🗨️",
                 url=f"https://t.me/PunjabiChat_Group",
             ),
         ],
