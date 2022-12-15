@@ -36,7 +36,7 @@ loop = asyncio.get_running_loop()
 
 
 @app.on_message(
-    filters.command(get_command("/start"))
+    filters.command(get_command("INFO_COMMAND"))
     & filters.private
     & ~filters.edited
     & ~BANNED_USERS
@@ -222,7 +222,7 @@ async def start_comm(client, message: Message, _):
 
 
 @app.on_message(
-    filters.command(get_command("/start"))
+    filters.command(get_command("INFO_COMMAND"))
     & filters.group
     & ~filters.edited
     & ~BANNED_USERS
