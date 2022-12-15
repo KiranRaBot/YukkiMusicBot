@@ -102,10 +102,10 @@ def stream_markup(_, videoid, chat_id):
                 callback_data=f"PanelMarkup None|{chat_id}",
             ),
         ],
+        [
             InlineKeyboardButton(
-                text=f"🗨️ JION CHAT GROUP 🗨️",
-                url=f"https://t.me/PunjabiChat_Group",
-            ),
+                text=_["CLOSEMENU_BUTTON"], callback_data="close"
+            )
         ],
     ]
     return buttons
